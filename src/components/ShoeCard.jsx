@@ -1,0 +1,35 @@
+
+const ShoeCard = ({ imgURL, changeBigShoeImage, bigShoeImg}) => {
+    const handleClick = () => {
+        if(bigShoeImg !== imgURL.bigShoe){
+            changeBigShoeImage(imgURL.bigShoe)
+        }
+    }
+  return (
+    <div className={
+        `border-2 rounded-xl 
+
+        ${bigShoeImg === imgURL.bigShoe
+        ? 'border-coral-red' 
+        : 'border-transparent'} 
+
+        cursor-pointer 
+       
+        `} 
+    onClick={handleClick}
+    >
+                    
+        <div className="flex justify-center items-center bg-card bg-center bg-cover sm:w-40 sm:h-40 rounded-xl max-sm:p-4">
+            <img 
+            src={imgURL.thumbnail} 
+            alt="shoe collection"
+            width={130}
+            height={103}
+            className="object-contain rotate-12 hover:scale-105 hover:rotate-0 duration-200"  />
+        </div>           
+                  
+    </div>
+  )
+}
+
+export default ShoeCard
